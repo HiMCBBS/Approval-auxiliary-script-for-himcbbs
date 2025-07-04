@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         MineBBS风纪委员会审核综合增强
+// @name         HiMCBBS风纪委员会审核综合增强
 // @namespace    http://tampermonkey.net/
 // @version      3.3
 // @description  提高审核效率, 风纪委员先行!
 // @author       乱杖先生
 // @license MIT
-// @match        https://www.minebbs.com/approval-queue/*
-// @match        https://www.minebbs.net/approval-queue/*
-// @icon         https://www.minebbs.com/data/assets/logo/faviconlan.png
+// @match        https://www.himcbbs.com/approval-queue/*
+// @match        https://www.himcbbs.top/approval-queue/*
+// @icon         https://static.himcbbs.com/images/favicon/favicon-black-128.png
 // @icon64       data:image/png;base64,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
 // @connect      raw.githubusercontent.com
 // @connect      ipinfo.io
@@ -92,7 +92,7 @@ class Config {
         return this.#emailList;
     }
     saveData() {
-        GM_setValue('minebbs:config', {
+        GM_setValue('himcbbs:config', {
             emailMode: this.emailMode,
             shortContentAccurateMode: this.shortContentAccurateMode,
             shortContentFuzzyMode: this.shortContentFuzzyMode,
@@ -106,7 +106,7 @@ class Config {
     }
     getData() {
         // 尝试从持久化设备中读取数据  
-        const storedConfig = GM_getValue('minebbs:config');
+        const storedConfig = GM_getValue('himcbbs:config');
         if (storedConfig) {
             // 读取成功，更新当前对象的属性  
             this.emailMode = storedConfig.emailMode;
@@ -127,7 +127,7 @@ class Config {
 const conf = new Config();
 
 // 获取加载旗帜, 用于判断是否为首次加载
-const loadflag = GM_getValue("minebbs:loadflag", 0);
+const loadflag = GM_getValue("himcbbs:loadflag", 0);
 if (!loadflag) {
     GM_log('初始化:首次载入插件, 即将开始初始化!');
 
@@ -141,7 +141,7 @@ if (!loadflag) {
     GM_log('初始化:配置数据持久化完成!');
     sendNotification('首次加载: 风纪委员插件初始化成功!');
     // 插旗
-    GM_setValue("minebbs:loadflag", 1);
+    GM_setValue("himcbbs:loadflag", 1);
 }else{
     // 加载数据
     conf.getData();
@@ -154,12 +154,12 @@ if (!loadflag) {
  * @returns 当前总计次数
  */
 function approvalFrequency(num = 0) {
-    let approval_frequency = GM_getValue("minebbs:approval_frequency", 0);
+    let approval_frequency = GM_getValue("himcbbs:approval_frequency", 0);
     if (num == 0) {
         return approval_frequency;
     }
-    GM_setValue("minebbs:approval_frequency", approval_frequency + num)
-    return GM_getValue("minebbs:approval_frequency", 0);
+    GM_setValue("himcbbs:approval_frequency", approval_frequency + num)
+    return GM_getValue("himcbbs:approval_frequency", 0);
 }
 /**
  * 发送插件通知
@@ -167,11 +167,11 @@ function approvalFrequency(num = 0) {
  */
 function sendNotification(text) {
     const noticDetails = {
-        title: "MineBBS风纪委员综合插件",
+        title: "himcbbs风纪委员综合插件",
         text,
-        url: 'https://www.minebbs.com/approval-queue/',
-        image: 'https://www.minebbs.com/data/addonflare/awardsystem/icons/25.png',
-        tag: 'notic:minebbs',
+        url: 'https://www.himcbbs.com/approval-queue/',
+        image: 'https://www.himcbbs.com/data/addonflare/awardsystem/icons/25.png',
+        tag: 'notic:himcbbs',
         silent: true,
         timeout: 5000
     }
@@ -523,7 +523,7 @@ function createFormRow_Info(labelObj = { text: '普通信息', hint: '调试' },
     const labelIconic = createElementWithClass('label', 'iconic');
     const span = document.createElement('span');
     setAttribute(span, 'className', 'iconic-label');
-    setAttribute(span, 'id', 'minebbs-menu-info');
+    setAttribute(span, 'id', 'himcbbs-menu-info');
     span.innerHTML = textObj['default'];
     labelIconic.appendChild(span);
     li.appendChild(labelIconic);
